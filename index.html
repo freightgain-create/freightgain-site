@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══════════════════════════════════════════
+       PRIMARY SEO
+  ════════════════════════════════════════════ -->
+  <title>FreightGain | Freight Profitability Software for Owner-Operators & Small Fleets</title>
+  <meta name="description" content="FreightGain shows owner-operators, hotshot carriers, and small fleets the real profit behind every load — revenue, fuel, deadhead, and net per mile — before you move an inch." />
+  <meta name="keywords" content="freight profitability software, owner operator profit tracker, load profit calculator, trucking cost tracker, hotshot carrier app, small fleet management, dispatcher tools, revenue per mile, net per mile calculator" />
+  <link rel="canonical" href="https://www.freightgain.com/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="FreightGain" />
+
+  <!-- ═══════════════════════════════════════════
+       OPEN GRAPH — Facebook, Reddit, LinkedIn
+  ════════════════════════════════════════════ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.freightgain.com/" />
+  <meta property="og:title" content="FreightGain | Know the Profit Before You Move the Load" />
+  <meta property="og:description" content="Stop guessing what a load is worth. FreightGain gives owner-operators and small fleets a clear view of revenue, fuel, deadhead, and net profit on every run." />
+  <meta property="og:image" content="https://www.freightgain.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="FreightGain" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- ═══════════════════════════════════════════
+       TWITTER / X CARD
+  ════════════════════════════════════════════ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@FreightGain" />
+  <meta name="twitter:title" content="FreightGain | Know the Profit Before You Move the Load" />
+  <meta name="twitter:description" content="Stop guessing what a load is worth. Real-time profit visibility for owner-operators, hotshot carriers, and small fleets." />
+  <meta name="twitter:image" content="https://www.freightgain.com/og-image.png" />
+
+  <!-- ═══════════════════════════════════════════
+       STRUCTURED DATA — JSON-LD
+  ════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "FreightGain",
+    "url": "https://www.freightgain.com",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, iOS, Android",
+    "description": "FreightGain is a freight profitability workspace for small fleets, owner-operators, hotshot carriers, and dispatchers. Track revenue, fuel, deadhead, expenses, and net profit by load.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/PreOrder",
+      "description": "Early access — sign up free"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "47"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "FreightGain",
+      "url": "https://www.freightgain.com"
+    }
+  }
+  </script>
+
+  <!-- ═══════════════════════════════════════════
+       GOOGLE ADS / ANALYTICS SLOTS
+       Replace UA-XXXXXXXX with your actual IDs
+  ════════════════════════════════════════════ -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+
+  <!-- ═══════════════════════════════════════════
+       FONTS
+  ════════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── DESIGN TOKENS ─────────────────────────── */
+    :root {
+      --navy:   #0b1d3a;
+      --blue:   #0a6bff;
+      --teal:   #00b2a9;
+      --green:  #22c55e;
+      --red:    #ef4444;
+      --amber:  #f59e0b;
+      --line:   #e5e7eb;
+      --soft:   #f7f9fb;
+      --text:   #0b1d3a;
+      --muted:  #5f6b7a;
+      --panel:  #fff;
+      --shadow: 0 12px 30px #0b1d3a14;
+      color: var(--text);
+      background: var(--soft);
+      font-family: Poppins, Inter, system-ui, -apple-system, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--soft); margin: 0; }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    h1, h2, h3, p { margin: 0; }
+
+    /* ─── SITE SHELL ────────────────────────────── */
+    .siteShell { min-height: 100vh; }
+
+    /* ─── HEADER ────────────────────────────────── */
+    .siteHeader {
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      background: #f7f9fbf0;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      min-height: 76px;
+      padding: 14px clamp(18px, 5vw, 72px);
+      position: sticky;
+      top: 0;
+    }
+    .logo { display: inline-flex; align-items: center; gap: 10px; min-width: max-content; }
+    .logoMark {
+      width: 42px; height: 42px;
+      color: var(--navy);
+      background: #061830;
+      border: 1px solid #0a6bff38;
+      display: grid;
+      place-items: center;
+    }
+    .logoMark svg { color: #fff; width: 34px; height: 34px; }
+    .logoText { display: flex; flex-direction: column; line-height: 1; }
+    .wordmark { font-size: 20px; font-weight: 800; letter-spacing: -.04em; }
+    .wordmark strong { color: var(--blue); }
+    .tagline {
+      font-size: 8px; font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 5px;
+    }
+    .mainNav {
+      display: flex; align-items: center; gap: 26px;
+      margin-left: auto;
+      font-size: 14px; font-weight: 600;
+      color: #35445a;
+    }
+    .mainNav a:hover { color: var(--blue); }
+    .navActions { display: flex; align-items: center; gap: 10px; }
+
+    /* ─── BUTTONS ────────────────────────────────── */
+    .btn {
+      display: inline-flex; justify-content: center; align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      min-height: 42px;
+      padding: 0 18px;
+      font-size: 14px; font-weight: 700;
+      transition: transform .15s, border-color .15s, background .15s;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btnPrimary { background: var(--blue); border-color: var(--blue); color: #fff; }
+    .btnPrimary:hover { background: #0057d9; border-color: #0057d9; }
+    .btnSecondary { background: #fff; color: var(--navy); }
+    .btnGhost { background: transparent; color: var(--navy); }
+    .btn.large { min-height: 52px; padding: 0 28px; font-size: 15px; }
+    .btn.xl    { min-height: 58px; padding: 0 36px; font-size: 16px; }
+
+    /* ─── LAYOUT ─────────────────────────────────── */
+    main { padding: 0 clamp(18px, 5vw, 72px) 80px; }
+
+    .sectionGrid {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(360px, 1.05fr);
+      align-items: center;
+      gap: clamp(24px, 4vw, 56px);
+    }
+
+    /* ─── EYEBROW / LABELS ───────────────────────── */
+    .eyebrow {
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: 12px; font-weight: 800;
+    }
+
+    /* ─── HERO ───────────────────────────────────── */
+    .hero { padding: clamp(56px, 8vw, 96px) 0 64px; }
+    h1 {
+      letter-spacing: -.065em;
+      max-width: 780px;
+      margin-top: 12px;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: .98;
+    }
+    h1 em { color: var(--blue); font-style: normal; }
+    h2 { letter-spacing: -.045em; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.04; }
+    h3 { letter-spacing: -.02em; font-size: 17px; }
+    .heroText {
+      max-width: 680px;
+      color: var(--muted);
+      margin-top: 22px;
+      font-size: clamp(17px, 1.6vw, 20px);
+      line-height: 1.65;
+    }
+    .heroActions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .heroBadge {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 20px;
+      font-size: 12px; font-weight: 600; color: var(--muted);
+    }
+    .heroBadge span {
+      display: inline-block;
+      width: 7px; height: 7px;
+      background: var(--green);
+      border-radius: 50%;
+    }
+
+    /* ─── DASHBOARD PREVIEW ──────────────────────── */
+    .dashboardPreview {
+      color: #fff;
+      background: linear-gradient(#0f1a2a 0%, #0b1726 100%);
+      border: 1px solid #84a3c43d;
+      border-radius: 5px;
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+    .previewTopbar {
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid #e5e7eb21;
+      padding-bottom: 14px;
+      font-weight: 800;
+    }
+    .previewTopbarLeft { display: flex; flex-direction: column; gap: 2px; }
+    .previewTopbarLeft small { color: #8ea0b9; font-size: 10px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; }
+    .statusDot {
+      color: var(--green);
+      border: 1px solid #22c55e59;
+      border-radius: 4px;
+      padding: 5px 9px;
+      font-size: 12px;
+    }
+    .previewGrid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .metricCard {
+      display: flex; flex-direction: column; gap: 7px;
+      background: #ffffff09;
+      border: 1px solid #84a3c438;
+      border-radius: 4px;
+      min-height: 112px;
+      padding: 14px;
+    }
+    .metricIcon {
+      width: 20px; height: 20px;
+      border-radius: 4px;
+      background: var(--blue);
+      opacity: .95;
+    }
+    .metricIcon.green  { background: var(--green); }
+    .metricIcon.teal   { background: var(--teal); }
+    .metricIcon.red    { background: var(--red); }
+    .metricIcon.amber  { background: var(--amber); }
+    .metricLabel {
+      font-size: 9px; font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #aab7ca;
+    }
+    .metricCard strong { font-size: 24px; letter-spacing: -.03em; }
+    .metricCard small  { font-size: 11px; color: #8ea0b9; }
+    .marginStrip {
+      display: grid;
+      grid-template-columns: max-content 68px minmax(150px, 1fr) max-content;
+      align-items: center;
+      gap: 16px;
+      border: 1px solid #84a3c42e;
+      border-radius: 4px;
+      min-height: 58px;
+      margin-top: 12px;
+      padding: 0 14px;
+    }
+    .marginStrip span  { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #dde7f5; }
+    .marginStrip strong { font-size: 24px; color: var(--teal); }
+    .bar { background: #94a3b840; border-radius: 3px; height: 15px; overflow: hidden; }
+    .bar span { display: block; width: 68%; height: 100%; background: linear-gradient(90deg, var(--teal), #57d9ce); }
+    .marginStrip small { color: #aab7ca; }
+
+    /* ─── PROBLEM SECTION ────────────────────────── */
+    .problemSection { border-top: 1px solid var(--line); padding: 64px 0; }
+    .solutionPanel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: 5px;
+      padding: clamp(22px, 3vw, 36px);
+    }
+    .solutionPanel p { color: var(--muted); margin-top: 10px; font-size: 17px; line-height: 1.75; }
+
+    /* ─── COMPARE ────────────────────────────────── */
+    .comparePanel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: 5px;
+      padding: 26px;
+    }
+    .comparePanel ul { display: grid; gap: 10px; margin: 22px 0 0; padding: 0; list-style: none; }
+    .comparePanel li { display: flex; align-items: center; gap: 10px; color: var(--muted); }
+    .comparePanel li::before { content: ""; width: 7px; height: 7px; border-radius: 1px; background: var(--red); flex-shrink: 0; }
+    .comparePanel.after li::before { background: var(--green); }
+    .compareGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 32px; }
+
+    /* ─── FEATURES ───────────────────────────────── */
+    .sectionBlock { border-top: 1px solid var(--line); padding: 64px 0; }
+    .sectionHeader { max-width: 760px; margin-bottom: 28px; }
+    .sectionHeader h2 { margin-top: 10px; }
+    .sectionHeader p { color: var(--muted); margin-top: 12px; font-size: 17px; line-height: 1.65; }
+    .featureGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .featureCard {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: 5px;
+      min-height: 170px;
+      padding: 22px;
+    }
+    .featureMarker {
+      font-size: 12px; font-weight: 800;
+      letter-spacing: .12em;
+      color: var(--teal);
+      margin-bottom: 24px;
+    }
+    .featureCard p { color: var(--muted); margin-top: 10px; line-height: 1.62; }
+
+    /* ─── AUDIENCE ───────────────────────────────── */
+    .audienceGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    .audienceGrid article {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: 5px;
+      padding: 22px;
+    }
+    .audienceGrid p { color: var(--muted); margin-top: 10px; line-height: 1.62; }
+
+    /* ─── TRUST BAR ──────────────────────────────── */
+    .trustBar {
+      border-top: 1px solid var(--line);
+      padding: 48px 0;
+      text-align: center;
+    }
+    .trustBar p { color: var(--muted); font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 24px; }
+    .trustItems { display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; }
+    .trustItem { display: flex; align-items: center; gap: 10px; }
+    .trustItem .icon { font-size: 22px; }
+    .trustItem span { font-size: 14px; font-weight: 700; color: var(--text); }
+
+    /* ─── CTA SECTION ────────────────────────────── */
+    .ctaSection {
+      background: var(--navy);
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      margin: 64px 0 0;
+      padding: clamp(26px, 4vw, 44px);
+      border-radius: 5px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .ctaSection p { color: #aab7ca; margin-top: 10px; font-size: 17px; line-height: 1.6; }
+    .ctaSection .ctaActions { display: flex; flex-wrap: wrap; gap: 12px; flex-shrink: 0; }
+    .btnLight { background: #fff; color: var(--navy); border-color: #fff; }
+    .btnLight:hover { background: #e8f0ff; border-color: #e8f0ff; }
+    .btnOutlineWhite { background: transparent; color: #fff; border-color: rgba(255,255,255,.35); }
+    .btnOutlineWhite:hover { border-color: #fff; }
+
+    /* ─── SOCIAL PROOF STRIP ─────────────────────── */
+    .proofStrip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      overflow: hidden;
+      margin-top: 64px;
+    }
+    .proofItem {
+      background: var(--panel);
+      padding: 32px 28px;
+      text-align: center;
+    }
+    .proofNum { font-size: 42px; font-weight: 800; letter-spacing: -.04em; color: var(--blue); }
+    .proofItem p { color: var(--muted); margin-top: 4px; font-size: 14px; }
+
+    /* ─── FOOTER ─────────────────────────────────── */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      border-top: 1px solid var(--line);
+      background: #fff;
+      padding: 28px clamp(18px, 5vw, 72px);
+    }
+    .footer nav { display: flex; gap: 22px; font-size: 14px; font-weight: 600; color: var(--muted); }
+    .footer nav a:hover { color: var(--blue); }
+    .footer small { font-size: 13px; color: var(--muted); }
+
+    /* ─── RESPONSIVE ─────────────────────────────── */
+    @media (max-width: 1080px) {
+      .mainNav { display: none; }
+      .sectionGrid { grid-template-columns: 1fr; }
+      .previewGrid, .featureGrid, .audienceGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .compareGrid { grid-template-columns: 1fr; }
+      .proofStrip { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 680px) {
+      .siteHeader { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .navActions { width: 100%; }
+      .navActions .btn { flex: 1; }
+      main { padding-bottom: 32px; }
+      .hero { padding-top: 38px; }
+      .previewGrid, .featureGrid, .audienceGrid { grid-template-columns: 1fr; }
+      .marginStrip { grid-template-columns: 1fr; align-items: flex-start; padding: 14px; }
+      .footer, .ctaSection { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="siteShell">
+
+  <!-- ════════════════════════════════════════════
+       HEADER
+  ═════════════════════════════════════════════ -->
+  <header class="siteHeader">
+    <a href="/" class="logo" aria-label="FreightGain home">
+      <div class="logoMark">
+        <!-- FG Logo Mark -->
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M9 39V8h19l-5 7H17v7h14l-5 7h-9v10H9Z" fill="currentColor"/>
+          <path d="M28 17h11c1.4 0 2.3 1.4 1.8 2.7C38.8 26.1 33.5 38 22 38h-6l4.5-7H24c5.6 0 8.8-4.4 10.7-8H28v-6Z" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="logoText">
+        <span class="wordmark">Freight<strong>Gain</strong></span>
+        <span class="tagline">Profit · Clarity · Control</span>
+      </div>
+    </a>
+
+    <nav class="mainNav" aria-label="Primary navigation">
+      <a href="#features">Features</a>
+      <a href="#who-its-for">Who it's for</a>
+      <a href="#how-it-works">How it works</a>
+    </nav>
+
+    <div class="navActions">
+      <a href="/login" class="btn btnGhost">Log in</a>
+      <a href="/signup" class="btn btnPrimary">Sign up free</a>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════════════════
+       MAIN
+  ═════════════════════════════════════════════ -->
+  <main>
+
+    <!-- ── HERO ──────────────────────────────────── -->
+    <section class="hero sectionGrid" aria-labelledby="hero-heading">
+      <div>
+        <p class="eyebrow">Freight profitability software</p>
+        <h1 id="hero-heading">Know the profit before you <em>move the load.</em></h1>
+        <p class="heroText">
+          FreightGain gives small fleets and owner-operators a clear view of revenue, fuel,
+          deadhead, expenses, and net profit — before and after every load. Stop running loads blind.
+        </p>
+        <div class="heroActions">
+          <a href="/signup" class="btn btnPrimary xl">Get early access — it's free</a>
+          <a href="#features" class="btn btnSecondary large">See how it works</a>
+        </div>
+        <p class="heroBadge">
+          <span></span>
+          Currently in early build — join the waitlist and get first access
+        </p>
+      </div>
+
+      <!-- Dashboard Preview UI -->
+      <div class="dashboardPreview" role="img" aria-label="FreightGain dashboard preview showing load profitability metrics">
+        <div class="previewTopbar">
+          <div class="previewTopbarLeft">
+            <small>FreightGain · Dashboard</small>
+            <span>May profit summary</span>
+          </div>
+          <span class="statusDot">● Early build</span>
+        </div>
+
+        <div class="previewGrid">
+          <div class="metricCard">
+            <div class="metricIcon green"></div>
+            <span class="metricLabel">Gross Revenue</span>
+            <strong>$18,420</strong>
+            <small>This month</small>
+          </div>
+          <div class="metricCard">
+            <div class="metricIcon teal"></div>
+            <span class="metricLabel">Revenue / Mile</span>
+            <strong>$3.12</strong>
+            <small>Avg. loaded</small>
+          </div>
+          <div class="metricCard">
+            <div class="metricIcon amber"></div>
+            <span class="metricLabel">Open Balance</span>
+            <strong>$4,800</strong>
+            <small>2 loads pending</small>
+          </div>
+          <div class="metricCard">
+            <div class="metricIcon blue"></div>
+            <span class="metricLabel">Fuel Spend</span>
+            <strong>$3,940</strong>
+            <small>vs. $4,100 prior mo.</small>
+          </div>
+          <div class="metricCard">
+            <div class="metricIcon red"></div>
+            <span class="metricLabel">Deadhead Cost</span>
+            <strong>$612</strong>
+            <small>194 empty miles</small>
+          </div>
+          <div class="metricCard">
+            <div class="metricIcon green"></div>
+            <span class="metricLabel">Net Profit</span>
+            <strong>$9,104</strong>
+            <small>After all costs</small>
+          </div>
+        </div>
+
+        <div class="marginStrip">
+          <span>Monthly margin</span>
+          <strong>49%</strong>
+          <div class="bar"><span></span></div>
+          <small>$9,104 net</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SOCIAL PROOF NUMBERS ───────────────────── -->
+    <div class="proofStrip" aria-label="Key statistics">
+      <div class="proofItem">
+        <div class="proofNum">$0</div>
+        <p>Free to get started — no card needed</p>
+      </div>
+      <div class="proofItem">
+        <div class="proofNum">6</div>
+        <p>Core modules built around the freight workflow</p>
+      </div>
+      <div class="proofItem">
+        <div class="proofNum">1</div>
+        <p>Unified workspace — no more scattered spreadsheets</p>
+      </div>
+    </div>
+
+    <!-- ── PROBLEM / SOLUTION ─────────────────────── -->
+    <section class="problemSection" id="how-it-works" aria-labelledby="problem-heading">
+      <div class="sectionGrid">
+        <div>
+          <p class="eyebrow">The problem</p>
+          <h2 id="problem-heading">Most small carriers know what a load pays.<br>Not what it keeps.</h2>
+          <p class="solutionPanel" style="margin-top:28px;">
+            Rate confirmations don't account for deadhead. Fuel receipts live in a shoebox.
+            Maintenance costs sneak up. And by the time you add it all up, the "good rate" already ran.
+            <br><br>
+            FreightGain connects dispatch, fuel, trips, brokers, and maintenance into one
+            profitability workspace — so the numbers are always in front of you, not behind you.
+          </p>
+        </div>
+
+        <div id="compare" aria-label="Before and after FreightGain comparison">
+          <div class="compareGrid">
+            <div class="comparePanel">
+              <p class="eyebrow" style="color:var(--red);">Before FreightGain</p>
+              <ul>
+                <li>Rate confirmations</li>
+                <li>Fuel receipts in a folder</li>
+                <li>Deadhead estimates in your head</li>
+                <li>Notes scattered everywhere</li>
+                <li>No idea what the load really kept</li>
+              </ul>
+            </div>
+            <div class="comparePanel after">
+              <p class="eyebrow" style="color:var(--green);">With FreightGain</p>
+              <ul>
+                <li>Gross revenue per load</li>
+                <li>Fuel cost connected to every run</li>
+                <li>Deadhead tracked and costed</li>
+                <li>Misc. expenses in one place</li>
+                <li>Net per mile — instantly visible</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FEATURES ───────────────────────────────── -->
+    <section class="sectionBlock" id="features" aria-labelledby="features-heading">
+      <div class="sectionHeader">
+        <p class="eyebrow">Built around the freight workflow</p>
+        <h2 id="features-heading">Simple tools for tracking revenue, costs, and operational details.</h2>
+        <p>Every feature in FreightGain connects back to one question: what did this load actually keep?</p>
+      </div>
+
+      <div class="featureGrid">
+        <div class="featureCard">
+          <p class="featureMarker">01 — LOAD PROFIT</p>
+          <h3>Load Profit Tracking</h3>
+          <p>Track rate, miles, expenses, and estimated net profit by load. See immediately which loads are worth running and which ones cost you money.</p>
+        </div>
+        <div class="featureCard">
+          <p class="featureMarker">02 — FUEL</p>
+          <h3>Fuel Cost Visibility</h3>
+          <p>Connect fuel spend directly to load and trip performance. Know your true cost-per-mile before you agree to the rate.</p>
+        </div>
+        <div class="featureCard">
+          <p class="featureMarker">03 — TRIPS</p>
+          <h3>Trip-Based Profit Summary</h3>
+          <p>Group related loads and miles into a clearer trip-level view. See profit across a full run — not just a single stop.</p>
+        </div>
+        <div class="featureCard">
+          <p class="featureMarker">04 — BROKERS</p>
+          <h3>Broker &amp; Contact Records</h3>
+          <p>Keep broker, customer, and load contact details in one workspace. Know who pays fast and who haggles on every load.</p>
+        </div>
+        <div class="featureCard">
+          <p class="featureMarker">05 — MAINTENANCE</p>
+          <h3>Maintenance Watchlist</h3>
+          <p>Monitor service intervals and upcoming maintenance costs. Never let a surprise repair wipe out a profitable month.</p>
+        </div>
+        <div class="featureCard">
+          <p class="featureMarker">06 — COCKPIT</p>
+          <h3>iPad Cockpit Mode</h3>
+          <p>A focused view designed for quick checks from the road or desk. Pull up your numbers in seconds — no digging required.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WHO IT'S FOR ────────────────────────────── -->
+    <section class="sectionBlock" id="who-its-for" aria-labelledby="audience-heading">
+      <div class="sectionHeader">
+        <p class="eyebrow">Who it's for</p>
+        <h2 id="audience-heading">Made for small freight operators.</h2>
+        <p>FreightGain is built for people who run the truck and the books — not for enterprise fleets with dedicated accounting teams.</p>
+      </div>
+
+      <div class="audienceGrid">
+        <article>
+          <h3>🚚 Hotshot Carriers</h3>
+          <p>Keep lane pricing, mileage, and trip costs visible before taking the load. Know if the run is worth the wheel time.</p>
+        </article>
+        <article>
+          <h3>👤 Owner-Operators</h3>
+          <p>Track what the truck actually keeps after fuel, deadhead, and expenses. No more running loads that don't pencil out.</p>
+        </article>
+        <article>
+          <h3>🏢 Small Fleets</h3>
+          <p>Build a cleaner workspace for dispatch, load history, and profitability checks across multiple trucks and drivers.</p>
+        </article>
+        <article>
+          <h3>📋 Dispatchers</h3>
+          <p>Use better numbers when reviewing load options and planning routes. Quote with confidence — not guesswork.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ── TRUST BAR ───────────────────────────────── -->
+    <section class="trustBar" aria-label="Why FreightGain">
+      <p>Why operators choose FreightGain</p>
+      <div class="trustItems">
+        <div class="trustItem"><span class="icon">⚡</span><span>Real-time profit visibility</span></div>
+        <div class="trustItem"><span class="icon">📱</span><span>Works on any device</span></div>
+        <div class="trustItem"><span class="icon">🔒</span><span>Your data, secured</span></div>
+        <div class="trustItem"><span class="icon">🚫</span><span>No spreadsheets required</span></div>
+        <div class="trustItem"><span class="icon">🆓</span><span>Free early access</span></div>
+      </div>
+    </section>
+
+    <!-- ── FINAL CTA ───────────────────────────────── -->
+    <section class="ctaSection" aria-labelledby="cta-heading">
+      <div>
+        <p class="eyebrow" style="color:var(--teal);">Early access — private build</p>
+        <h2 id="cta-heading" style="color:#fff;">Run every load with the numbers in front of you.</h2>
+        <p>FreightGain is currently in early build. Sign up now to get first access when we open the doors — and help shape the product.</p>
+      </div>
+      <div class="ctaActions">
+        <a href="/signup" class="btn btnLight xl">Sign up free</a>
+        <a href="/login" class="btn btnOutlineWhite large">Log in</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════════════════════════════════════
+       FOOTER
+  ═════════════════════════════════════════════ -->
+  <footer class="footer" aria-label="Footer navigation">
+    <a href="/" class="logo" aria-label="FreightGain home">
+      <div class="logoMark" style="width:32px;height:32px;">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:26px;height:26px;">
+          <path d="M9 39V8h19l-5 7H17v7h14l-5 7h-9v10H9Z" fill="currentColor"/>
+          <path d="M28 17h11c1.4 0 2.3 1.4 1.8 2.7C38.8 26.1 33.5 38 22 38h-6l4.5-7H24c5.6 0 8.8-4.4 10.7-8H28v-6Z" fill="currentColor"/>
+        </svg>
+      </div>
+      <span style="font-size:15px;font-weight:800;letter-spacing:-.03em;">Freight<strong style="color:var(--blue);">Gain</strong></span>
+    </a>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#who-its-for">Who it's for</a>
+      <a href="/signup">Sign up</a>
+      <a href="/login">Log in</a>
+      <a href="mailto:hello@freightgain.com">Contact</a>
+    </nav>
+    <small>© 2026 FreightGain. All rights reserved.</small>
+  </footer>
+
+</div>
+</body>
+</html>
